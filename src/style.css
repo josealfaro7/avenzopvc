@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+@theme {
+  --font-sans: "Inter", sans-serif;
+}
+
+body {
+  @apply bg-slate-50 text-slate-800 font-sans;
+}
+
+/* Custom styles for masonry and other specific brutalist looks */
+.masonry {
+  columns: 1;
+  column-gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .masonry {
+    columns: 2;
+  }
+}
+
+@media (min-width: 1024px) {
+  .masonry {
+    columns: 3;
+  }
+}
+
+.masonry-item {
+  break-inside: avoid;
+  margin-bottom: 1.5rem;
+}
+
+/* Remove default blue outline on focus, add brutalist outline instead */
+:focus-visible {
+  outline: 2px solid var(--color-slate-900, #0f172a);
+  outline-offset: 2px;
+}
